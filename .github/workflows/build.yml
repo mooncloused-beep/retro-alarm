@@ -1,4 +1,4 @@
-name: Build Debug APK
+name: Build APK
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
       
-    - name: Create Gradle Wrapper
+    - name: Create gradle wrapper properties
       run: |
         mkdir -p gradle/wrapper
         echo 'distributionBase=GRADLE_USER_HOME
@@ -31,7 +31,7 @@ jobs:
         zipStoreBase=GRADLE_USER_HOME
         zipStorePath=wrapper/dists' > gradle/wrapper/gradle-wrapper.properties
         
-    - name: Download and Setup Gradle
+    - name: Download Gradle
       run: |
         curl -sL https://services.gradle.org/distributions/gradle-8.4-bin.zip -o gradle.zip
         unzip -q gradle.zip
@@ -39,7 +39,7 @@ jobs:
         gradle wrapper --gradle-version 8.4
         rm -rf gradle.zip gradle-8.4
         
-    - name: Build APK
+    - name: Build debug APK
       run: ./gradlew assembleDebug --no-daemon
       
     - name: Upload APK
