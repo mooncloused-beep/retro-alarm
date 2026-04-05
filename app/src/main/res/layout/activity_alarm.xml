@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/retro_lcd_bg"
+    android:keepScreenOn="true">
+
+    <TextView
+        android:id="@+id/tvWakeUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WAKE UP!"
+        android:textColor="@color/retro_red"
+        android:textSize="36sp"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="48dp"
+        android:shadowColor="#FF0000"
+        android:shadowRadius="15"/>
+
+    <TextView
+        android:id="@+id/tvAlarmTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textColor="@color/retro_green"
+        android:textSize="64sp"
+        android:fontFamily="monospace"
+        android:shadowColor="#00FF00"
+        android:shadowRadius="20"
+        app:layout_constraintTop_toBottomOf="@id/tvWakeUp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/puzzleContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/retro_panel"
+        android:padding="32dp"
+        app:layout_constraintTop_toBottomOf="@id/tvAlarmTime"
+        app:layout_constraintBottom_toTopOf="@id/etAnswer"
+        app:layout_constraintVertical_bias="0.4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SOLVE TO DISMISS:"
+            android:textColor="@color/retro_amber"
+            android:textSize="18sp"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tvPuzzle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="? + ? = ?"
+            android:textColor="@color/retro_green"
+            android:textSize="48sp"
+            android:fontFamily="monospace"
+            android:shadowColor="#00FF00"
+            android:shadowRadius="10"/>
+
+        <TextView
+            android:id="@+id/tvHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENTER YOUR ANSWER"
+            android:textColor="@color/retro_orange"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etAnswer"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="?"
+        android:textColor="@color/retro_green"
+        android:textColorHint="#336633"
+        android:textSize="36sp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:inputType="numberSigned"
+        android:background="@drawable/retro_panel"
+        android:padding="16dp"
+        android:textCursorDrawable="@null"
+        app:layout_constraintBottom_toTopOf="@id/btnDismiss"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnDismiss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="[ DISMISS ]"
+        android:textSize="28sp"
+        android:textColor="@color/black"
+        android:background="@drawable/retro_button"
+        android:fontFamily="monospace"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@id/btnSnooze"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnSnooze"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="[ SNOOZE 5 MIN ]"
+        android:textSize="18sp"
+        android:textColor="@color/retro_green"
+        android:background="@drawable/retro_panel"
+        android:fontFamily="monospace"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="48dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="retro_green">#33FF33</color>
+    <color name="retro_dark_green">#006600</color>
+    <color name="retro_lcd_bg">#001100</color>
+    <color name="retro_orange">#FF8800</color>
+    <color name="retro_amber">#FFBB00</color>
+    <color name="retro_red">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray_dark">#222222</color>
+</resources>

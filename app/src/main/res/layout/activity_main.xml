@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/retro_lcd_bg"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[ RETRO ALARM ]"
+        android:textColor="@color/retro_green"
+        android:textSize="24sp"
+        android:fontFamily="monospace"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/tvCurrentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textColor="@color/retro_green"
+        android:textSize="80sp"
+        android:fontFamily="monospace"
+        android:shadowColor="#00FF00"
+        android:shadowRadius="20"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <LinearLayout
+        android:id="@+id/timePickerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/retro_panel"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvCurrentTime"
+        android:layout_marginTop="32dp">
+
+        <NumberPicker
+            android:id="@+id/npHour"
+            android:layout_width="60dp"
+            android:layout_height="120dp"
+            android:theme="@style/Theme.RetroAlarm"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textColor="@color/retro_green"
+            android:textSize="48sp"
+            android:layout_marginHorizontal="8dp"/>
+
+        <NumberPicker
+            android:id="@+id/npMinute"
+            android:layout_width="60dp"
+            android:layout_height="120dp"
+            android:theme="@style/Theme.RetroAlarm"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/difficultyContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/retro_panel"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/timePickerContainer"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PUZZLE DIFFICULTY:"
+            android:textColor="@color/retro_amber"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgDifficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbEasy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="EASY"
+                android:textColor="@color/retro_green"
+                android:buttonTint="@color/retro_green"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/rbMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="MEDIUM"
+                android:textColor="@color/retro_amber"
+                android:buttonTint="@color/retro_amber"/>
+
+            <RadioButton
+                android:id="@+id/rbHard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HARD"
+                android:textColor="@color/retro_orange"
+                android:buttonTint="@color/retro_orange"/>
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSetAlarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="[ SET ALARM ]"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:background="@drawable/retro_button"
+        android:fontFamily="monospace"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/tvStatus"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STATUS: IDLE"
+        android:textColor="@color/retro_green"
+        android:textSize="14sp"
+        android:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
