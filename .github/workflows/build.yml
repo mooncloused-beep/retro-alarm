@@ -21,6 +21,12 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
       
+    - name: Debug - Show build.gradle
+      run: cat build.gradle
+      
+    - name: Debug - Show app/build.gradle
+      run: cat app/build.gradle
+      
     - name: Build debug APK
       run: chmod +x gradlew && ./gradlew assembleDebug --no-daemon
       
