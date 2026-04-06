@@ -63,7 +63,7 @@
             android:id="@+id/tvPuzzle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="? + ? = ?"
+            android:text="Solve to dismiss"
             android:textColor="@color/retro_green"
             android:textSize="48sp"
             android:fontFamily="monospace"
